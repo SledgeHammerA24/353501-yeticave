@@ -62,10 +62,6 @@ $now = strtotime('now');
     </ul>
   <?php endif; ?>
 
-
-
-
-
         </nav>
     </div>
 </header>
@@ -122,7 +118,8 @@ $now = strtotime('now');
                             <span class="lot__cost">10 999<b class="rub">р</b></span>
                         </div>
                         <div class="lot__timer timer">
-                            <?=$lot_time_remaining;?>
+                          <?=$hours_time_remaining=floor(($tomorrow-$now)/60/60);?>:
+                          <?=$lot_time_remaining=floor((($tomorrow-$now)/60/60-$hours_time_remaining)*60);?>
                         </div>
                     </div>
                 </div>

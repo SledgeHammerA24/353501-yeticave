@@ -20,7 +20,7 @@ $now = strtotime('now');
 // ...
 $hours_delta_time=floor(($tomorrow-$now)/3600); // вычисляем часы
 $minutes_delta_time=floor(($tomorrow-$now)%3600 / 60); // вычисляем минуты
-$lot_time_remaining=sprintf("%02d:%02d", $hours_delta_time, $minutes_delta_time); // переопределяем переменную
+$lot_time_remaining=sprintf("%02d:%02d", $hours_delta_time, $minutes_delta_time); // переопределяем переменную $lot_time_remaining
 
 
 ?>

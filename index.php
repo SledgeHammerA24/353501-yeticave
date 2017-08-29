@@ -18,6 +18,11 @@ $now = strtotime('now');
 
 // далее нужно вычислить оставшееся время до начала следующих суток и записать его в переменную $lot_time_remaining
 // ...
+$hours_delta_time=floor(($tomorrow-$now)/3600); // вычисляем часы
+$minutes_delta_time=floor(($tomorrow-$now)%3600 / 60); // вычисляем минуты
+$lot_time_remaining=sprintf("%02d:%02d", $hours_delta_time, $minutes_delta_time); // переопределяем переменную
+
+
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -118,8 +123,7 @@ $now = strtotime('now');
                             <span class="lot__cost">10 999<b class="rub">р</b></span>
                         </div>
                         <div class="lot__timer timer">
-                          <?=$hours_time_remaining=floor(($tomorrow-$now)/60/60);?>:
-                          <?=$lot_time_remaining=floor((($tomorrow-$now)/60/60-$hours_time_remaining)*60);?>
+                          <?=$lot_time_remaining;?>
                         </div>
                     </div>
                 </div>

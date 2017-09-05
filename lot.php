@@ -9,27 +9,27 @@ $bets = [
 ];
 
 // Организация и описание работы функции по преобразованию машинного времени на человеческий лад
-function lot_life($bet_time)
+function lot_life($bet_time) //
 {
-  $now = strtotime('now'); // вычисляем текущее время
-  $delta_time = $now - $bet_time; // вычисляем разницу во времени между сделанной ставкой и текущим моментом в сек в 1970г
-  $days_delta_time=floor($delta_time/86400); // вычисляем дельту в днях
-  $hours_delta_time=floor($delta_time%86400 / 3600); // вычисляем дельту в часах
-  $minutes_delta_time=floor(($delta_time%86400- $hours_delta_time*3600)/ 60); // вычисляем дельту в минутах
+  $now = strtotime('now'); // вычисляем текущее время.
+  $delta_time = $now - $bet_time; // вычисляем разницу во времени между сделанной ставкой и текущим моментом в сек в 1970г.
+  $days_delta_time=floor($delta_time/86400); // вычисляем дельту в днях.
+  $hours_delta_time=floor($delta_time%86400 / 3600); // вычисляем дельту в часах.
+  $minutes_delta_time=floor(($delta_time%86400- $hours_delta_time*3600)/ 60); // вычисляем дельту в минутах.
 
-  // условие для корректного вывода даты $outbound_bet_time в человеческом виде в зависимости от времени сделанной ставки
-  if ($delta_time<=86400 && $delta_time>=3600) { // если ставка была сделана меньше суток назад и больше часа назад
-    $outbound_bet_time=sprintf($hours_delta_time. ' часов назад'); // определяем переменную $outbound_bet_time
+  // условие для корректного вывода даты $outbound_bet_time в человеческом виде в зависимости от времени сделанной ставки.
+  if ($delta_time<=86400 && $delta_time>=3600) { // если ставка была сделана меньше суток назад и больше часа назад.
+    $outbound_bet_time=sprintf($hours_delta_time. ' часов назад'); // определяем переменную $outbound_bet_time.
   }
-  else if ($delta_time>86400) { // если ставка была сделана больше суток назад
-    $outbound_bet_time=date("d.m.y в H:i", $bet_time); // определяем переменную $outbound_bet_time
+  else if ($delta_time>86400) { // если ставка была сделана больше суток назад.
+    $outbound_bet_time=date("d.m.y в H:i", $bet_time); // определяем переменную $outbound_bet_time.
   }
-  else { // если ставка была сделана меньше часа назад
-    $outbound_bet_time=sprintf($minutes_delta_time. ' минут назад'); // определяем переменную $outbound_bet_time в третьем случае
-  }
+  else { // если ставка была сделана меньше часа назад.
+    $outbound_bet_time=sprintf($minutes_delta_time. ' минут назад'); // определяем переменную $outbound_bet_time в третьем случае.
+  } //.
 
-  return $outbound_bet_time;
-}
+  return $outbound_bet_time;  //
+}  //
 ?>
 
 <!DOCTYPE html>

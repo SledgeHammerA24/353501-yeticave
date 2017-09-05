@@ -8,7 +8,7 @@ $bets = [
     ['name' => 'Семён', 'price' => 10000, 'ts' => strtotime('last week')]
 ];
 
-// Организация и описание работы функции по преобразованию машинного времени на человеческий лад 
+// Организация и описание работы функции по преобразованию машинного времени на человеческий лад
 function lot_life($bet_time)
 {
   $now = strtotime('now'); // вычисляем текущее время
@@ -134,11 +134,11 @@ function lot_life($bet_time)
                     <h3>История ставок (<span>4</span>)</h3>
                     <!-- заполните эту таблицу данными из массива $bets-->
                     <table class="history__list">
-                      <?php foreach ($bets as $key => $value) : ?>
+                      <?php foreach ($bets as $itemId => $itemInfo) : ?>
                         <tr class="history__item">
-                            <td class="history__name"><?=$value['name'];?></td>
-                            <td class="history__price"><?=$value['price'];?>р</td>
-                            <td class="history__time"><?=lot_life($value['ts']);?></td>
+                            <td class="history__name"><?=$itemInfo['name'];?></td>
+                            <td class="history__price"><?=$itemInfo['price'];?>р</td>
+                            <td class="history__time"><?=lot_life($itemInfo['ts']);?></td>
                         </tr>
                       <?php endforeach ?>
                     </table>

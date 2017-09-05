@@ -27,37 +27,37 @@ $categories_array = ["Все категории", "Доски и лыжи", "К�
 
 // Организация двумерного массива - лоты (6 шт) уложены в простой индексированный массив
 $items_array = [
-0 => [
+     [
     'Название' => '2014 Rossignol District Snowboard',
     'Категория' => 'Доски и лыжи',
     'Цена' => 10999,
     'URL Картинки' => 'img/lot-1.jpg'
      ],
-1 => [
+     [
   'Название' => 'DC Ply Mens 2016/2017 Snowboard',
   'Категория' => 'Доски и лыжи',
   'Цена' => 159999,
   'URL Картинки' => 'img/lot-2.jpg'
      ],
-2 => [
+     [
   'Название' => 'Крепления Union Contact Pro 2015 года размер L/XL',
   'Категория' => 'Крепления',
   'Цена' => 8000,
   'URL Картинки' => 'img/lot-3.jpg'
      ],
-3 => [
+     [
   'Название' => 'Ботинки для сноуборда DC Mutiny Charocal',
   'Категория' => 'Ботинки',
   'Цена' => 10999,
   'URL Картинки' => 'img/lot-4.jpg'
      ],
-4 => [
+     [
   'Название' => 'Куртка для сноуборда DC Mutiny Charocal',
   'Категория' => 'Одежда',
   'Цена' => 7500,
   'URL Картинки' => 'img/lot-5.jpg'
      ],
-5 => [
+     [
   'Название' => 'Маска Oakley Canopy',
   'Категория' => 'Разное',
   'Цена' => 5400,
@@ -142,25 +142,25 @@ $items_array = [
         <div class="lots__header">
             <h2>Открытые лоты</h2>
             <select class="lots__select">
-                <?php foreach ($categories_array as $value) : ?>
-                  <option><?=$value;?></option>
+                <?php foreach ($categories_array as $category) : ?>
+                  <option><?=$category;?></option>
                 <?php endforeach ?>
             </select>
         </div>
 
         <ul class="lots__list">
-          <?php foreach ($items_array as $key => $value) : ?>
+          <?php foreach ($items_array as $itemId => $itemInfo) : ?>
               <li class="lots__item lot">
                 <div class="lot__image">
-                    <img src="<?=$value['URL Картинки'];?>" width="350" height="260" alt="Сноуборд">
+                    <img src="<?=$itemInfo['URL Картинки'];?>" width="350" height="260" alt="Сноуборд">
                 </div>
                 <div class="lot__info">
-                    <span class="lot__category"><?=$value['Категория'];?></span>
-                    <h3 class="lot__title"><a class="text-link" href="lot.html"><?=$value['Название'];?></a></h3>
+                    <span class="lot__category"><?=htmlspecialchars($itemInfo['Категория']);?></span>
+                    <h3 class="lot__title"><a class="text-link" href="lot.html"><?=htmlspecialchars($itemInfo['Название']);?></a></h3>
                     <div class="lot__state">
                         <div class="lot__rate">
                             <span class="lot__amount">Стартовая цена</span>
-                            <span class="lot__cost"><?=$value['Цена'];?><b class="rub">р</b></span>
+                            <span class="lot__cost"><?=$itemInfo['Цена'];?><b class="rub">р</b></span>
                         </div>
                         <div class="lot__timer timer">
                           <?=$lot_time_remaining;?>

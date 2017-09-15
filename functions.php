@@ -7,11 +7,9 @@ function renderTemplate($template_path, $template_data) {
   }
     extract($template_data); // экспортируем внешние данные во внутренние переменные функции
     ob_start(); // включаем буферизацию вывода
-    require_once $template_path; // выкладываем в буфер содержимое из подключённого шаблона
+    include $template_path; // выкладываем в буфер содержимое из подключённого шаблона
     return ob_get_clean(); // получаем содержимое текущего буфера и затем удаляем текущий буфер.
 
 }
-?>
 
 
-?>

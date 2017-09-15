@@ -33,8 +33,8 @@
         </div>
 
         <ul class="lots__list">
-          <?php foreach ($template_data['items'] as $itemId => $itemInfo) : ?>
-              <?=renderTemplate('templates/lot_item.php', ['lot' => $itemInfo, 'lot_time_remaining' => $lot_time_remaining]); ?>
+            <?php foreach ($items as $itemId => $itemInfo) : ?>
+                <?=renderTemplate('templates/lot_item.php', ['lot' => $itemInfo, 'lot_time_remaining' => $lot_time_remaining]); ?>
           <?php endforeach ?>
         </ul>
 

@@ -29,7 +29,32 @@ function lot_life($bet_time) //
   } //.
 
   return $outbound_bet_time;  //
-}  //
+}
+
+// подключение файла с данными о лотах data_lots.php
+require_once 'templates/data_lots.php';
+
+// подсчитываем сколько всего элементов в массиве
+//$number_of_items = count($items_array);
+
+
+// при вызове страницы по ссылке проверяем установлена ли переменная itemId в глобальном массиве $_GET (указан ли параметр запроса - идентификатор itemId) с помощью функции isset, а также
+if (isset($_GET['itemId'])) {
+    $id = $_GET['itemId'];
+}
+else {
+    http_response_code(404);
+    print("Такой страницы не существует (ошибка 404)");
+}
+
+// проверяем наличие в массиве лотов items_array элемента с (переданным) индексом itemId
+if (array_key_exists($id, $items_array)) {
+}
+else {
+    http_response_code(404);
+    print("Такой страницы не существует (ошибка 404)");
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -90,13 +115,13 @@ function lot_life($bet_time) //
         </ul>
     </nav>
     <section class="lot-item container">
-        <h2>DC Ply Mens 2016/2017 Snowboard</h2>
+        <h2><?=$items_array[$id]['Название'];?></h2>
         <div class="lot-item__content">
             <div class="lot-item__left">
                 <div class="lot-item__image">
-                    <img src="img/lot-image.jpg" width="730" height="548" alt="Сноуборд">
+                    <img src="<?=$items_array[$id]['URL Картинки'];?>" width="730" height="548" alt="Сноуборд">
                 </div>
-                <p class="lot-item__category">Категория: <span>Доски и лыжи</span></p>
+                <p class="lot-item__category">Категория: <span><?=$items_array[$id]['Категория'];?></span></p>
                 <p class="lot-item__description">Легкий маневренный сноуборд, готовый дать жару в любом парке, растопив
                     снег
                     мощным щелчкоми четкими дугами. Стекловолокно Bi-Ax, уложенное в двух направлениях, наделяет этот
@@ -106,7 +131,7 @@ function lot_life($bet_time) //
                     позволит уверенно держать высокие скорости. А если к концу катального дня сил совсем не останется,
                     просто
                     посмотрите на Вашу доску и улыбнитесь, крутая графика от Шона Кливера еще никого не оставляла
-                    равнодушным.</p>
+                    равнодушным.<?=$id;?></p>
             </div>
             <div class="lot-item__right">
                 <div class="lot-item__state">
@@ -116,7 +141,7 @@ function lot_life($bet_time) //
                     <div class="lot-item__cost-state">
                         <div class="lot-item__rate">
                             <span class="lot-item__amount">Текущая цена</span>
-                            <span class="lot-item__cost">11 500</span>
+                            <span class="lot-item__cost"><?=$items_array[$id]['Цена'];?></span>
                         </div>
                         <div class="lot-item__min-cost">
                             Мин. ставка <span>12 000 р</span>

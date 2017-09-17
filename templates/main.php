@@ -34,7 +34,7 @@
 
         <ul class="lots__list">
             <?php foreach ($items as $itemId => $itemInfo) : ?>
-                <?=renderTemplate('templates/lot_item.php', ['lot' => $itemInfo, 'lot_time_remaining' => $lot_time_remaining]); ?>
+                <?=renderTemplate('templates/lot_item.php', ['lot' => $itemInfo, 'itemId' => $itemId, 'lot_time_remaining' => $lot_time_remaining]); ?>
           <?php endforeach ?>
         </ul>
 

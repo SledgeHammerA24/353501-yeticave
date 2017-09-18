@@ -26,6 +26,7 @@
         <div class="lots__header">
             <h2>Открытые лоты</h2>
             <select class="lots__select">
+                <option>Все категории</option>
                 <?php foreach ($template_data['categories'] as $category) : ?>
                   <option><?=$category;?></option>
                 <?php endforeach ?>

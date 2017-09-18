@@ -23,11 +23,9 @@ $hours_delta_time=floor(($tomorrow-$now)/3600); // вычисляем часы
 $minutes_delta_time=floor(($tomorrow-$now)%3600 / 60); // вычисляем минуты
 $lot_time_remaining=sprintf("%02d:%02d", $hours_delta_time, $minutes_delta_time); // переопределяем переменную $lot_time_remaining
 
-// Организация простого массива - список категорий товаров
-$categories_array = ["Все категории", "Доски и лыжи", "Крепления", "Ботинки", "Одежда", "Инструменты", "Разное"];
 
 // подключение файла с данными о лотах data_lots.php
-require_once 'templates/data_lots.php';
+require_once 'data_lots.php';
 
 // подключение файла с функциями-шаблонизаторами functions.php
 require_once 'functions.php';
@@ -36,7 +34,7 @@ require_once 'functions.php';
 $page_main_content=renderTemplate('templates/main.php', ['categories' => $categories_array, 'items' => $items_array, 'lot_time_remaining' => $lot_time_remaining]);
 
 // окончательное формирование Главной страницы - передача в шаблонизатор данных для layout - имя пользователя, аватар, html-контент страницы main
-$layout_page_main=renderTemplate('templates/layout.php', ['page_title' => 'Главная', 'page_content' => $page_main_content, 'user_avatar' => $user_avatar, 'user_name' => $user_name, 'is_auth' => $is_auth]);
+$layout_page_main=renderTemplate('templates/layout.php', ['page_title' => 'Главная', 'page_content' => $page_main_content, 'user_avatar' => $user_avatar, 'user_name' => $user_name, 'is_auth' => $is_auth, 'categories' => $categories_array]);
 
 // Вывод Главной страницы на экран
 print ($layout_page_main);

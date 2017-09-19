@@ -53,7 +53,7 @@ require_once 'functions.php';
 $page_lot_content=renderTemplate('templates/page_lot_main.php', ['categories' => $categories_array, 'item' => $items_array, 'bets' => $bets, 'id' => $id]);
 
 // окончательное формирование страницы Страница Лота - передача в шаблонизатор данных для layout - название страницы(=названию Лота), html-контент страницы main
-$layout_page_lot=renderTemplate('templates/layout.php', ['page_title' => $items_array[$id]['Название'], 'page_content' => $page_lot_content, 'categories' => $categories_array]);
+$layout_page_lot=renderTemplate('templates/layout.php', ['page_title' => $items_array[$id]['lot_name'], 'page_content' => $page_lot_content, 'categories' => $categories_array]);
 
 // Вывод Главной страницы на экран
 print ($layout_page_lot);

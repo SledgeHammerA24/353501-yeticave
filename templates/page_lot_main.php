@@ -8,13 +8,13 @@
         </ul>
     </nav>
     <section class="lot-item container">
-        <h2><?=$item[$id]['Название'];?></h2>
+        <h2><?=$item[$id]['lot_name'];?></h2>
         <div class="lot-item__content">
             <div class="lot-item__left">
                 <div class="lot-item__image">
-                    <img src="<?=$item[$id]['URL Картинки'];?>" width="730" height="548" alt="Сноуборд">
+                    <img src="<?=$item[$id]['URL_lot_pic'];?>" width="730" height="548" alt="<?=$item[$id]['lot_name'];?>">
                 </div>
-                <p class="lot-item__category">Категория: <span><?=$item[$id]['Категория'];?></span></p>
+                <p class="lot-item__category">Категория: <span><?=$item[$id]['category'];?></span></p>
                 <p class="lot-item__description">Легкий маневренный сноуборд, готовый дать жару в любом парке, растопив
                     снег
                     мощным щелчкоми четкими дугами. Стекловолокно Bi-Ax, уложенное в двух направлениях, наделяет этот
@@ -34,7 +34,7 @@
                     <div class="lot-item__cost-state">
                         <div class="lot-item__rate">
                             <span class="lot-item__amount">Текущая цена</span>
-                            <span class="lot-item__cost"><?=$item[$id]['Цена'];?></span>
+                            <span class="lot-item__cost"><?=$item[$id]['lot_price'];?></span>
                         </div>
                         <div class="lot-item__min-cost">
                             Мин. ставка <span>12 000 р</span>

@@ -7,40 +7,40 @@ $categories_array = ["Доски и лыжи", "Крепления", "Ботин
 // Организация двумерного массива - лоты (6 шт) уложены в простой индексированный массив
 $items_array = [
      [
-    'Название' => '2014 Rossignol District Snowboard',
-    'Категория' => 'Доски и лыжи',
-    'Цена' => 10999,
-    'URL Картинки' => 'img/lot-1.jpg'
+    'lot_name' => '2014 Rossignol District Snowboard',
+    'category' => 'Доски и лыжи',
+    'lot_price' => 10999,
+    'URL_lot_pic' => 'img/lot-1.jpg'
      ],
      [
-  'Название' => 'DC Ply Mens 2016/2017 Snowboard',
-  'Категория' => 'Доски и лыжи',
-  'Цена' => 159999,
-  'URL Картинки' => 'img/lot-2.jpg'
+  'lot_name' => 'DC Ply Mens 2016/2017 Snowboard',
+  'category' => 'Доски и лыжи',
+  'lot_price' => 159999,
+  'URL_lot_pic' => 'img/lot-2.jpg'
      ],
      [
-  'Название' => 'Крепления Union Contact Pro 2015 года размер L/XL',
-  'Категория' => 'Крепления',
-  'Цена' => 8000,
-  'URL Картинки' => 'img/lot-3.jpg'
+  'lot_name' => 'Крепления Union Contact Pro 2015 года размер L/XL',
+  'category' => 'Крепления',
+  'lot_price' => 8000,
+  'URL_lot_pic' => 'img/lot-3.jpg'
      ],
      [
-  'Название' => 'Ботинки для сноуборда DC Mutiny Charocal',
-  'Категория' => 'Ботинки',
-  'Цена' => 10999,
-  'URL Картинки' => 'img/lot-4.jpg'
+  'lot_name' => 'Ботинки для сноуборда DC Mutiny Charocal',
+  'category' => 'Ботинки',
+  'lot_price' => 10999,
+  'URL_lot_pic' => 'img/lot-4.jpg'
      ],
      [
-  'Название' => 'Куртка для сноуборда DC Mutiny Charocal',
-  'Категория' => 'Одежда',
-  'Цена' => 7500,
-  'URL Картинки' => 'img/lot-5.jpg'
+  'lot_name' => 'Куртка для сноуборда DC Mutiny Charocal',
+  'category' => 'Одежда',
+  'lot_price' => 7500,
+  'URL_lot_pic' => 'img/lot-5.jpg'
      ],
      [
-  'Название' => 'Маска Oakley Canopy',
-  'Категория' => 'Разное',
-  'Цена' => 5400,
-  'URL Картинки' => 'img/lot-6.jpg'
+  'lot_name' => 'Маска Oakley Canopy',
+  'category' => 'Разное',
+  'lot_price' => 5400,
+  'URL_lot_pic' => 'img/lot-6.jpg'
     ]
             ];
 

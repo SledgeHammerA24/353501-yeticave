@@ -26,6 +26,7 @@
         <div class="lots__header">
             <h2>Открытые лоты</h2>
             <select class="lots__select">
+                <option>Все категории</option>
                 <?php foreach ($template_data['categories'] as $category) : ?>
                   <option><?=$category;?></option>
                 <?php endforeach ?>
@@ -34,7 +35,7 @@
 
         <ul class="lots__list">
             <?php foreach ($items as $itemId => $itemInfo) : ?>
-                <?=renderTemplate('templates/lot_item.php', ['lot' => $itemInfo, 'lot_time_remaining' => $lot_time_remaining]); ?>
+                <?=renderTemplate('templates/lot_item.php', ['lot' => $itemInfo, 'itemId' => $itemId, 'lot_time_remaining' => $lot_time_remaining]); ?>
           <?php endforeach ?>
         </ul>
 
